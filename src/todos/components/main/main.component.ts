@@ -15,6 +15,7 @@ export class MainComponent {
   visibleTodos$: Observable<TodoInterface[]>;
   noTodoClass$: Observable<boolean>
   isAllTodosSelected$: Observable<boolean>
+  editingId: string | null = null
 
   constructor( private _todosService: TodoService){
     this.isAllTodosSelected$ = this._todosService.todos$.pipe(map((todos)=> todos.every((todo) => todo.isCompleted)))

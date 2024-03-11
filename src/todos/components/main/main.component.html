@@ -11,7 +11,7 @@
     <app-todos-todo
       *ngFor="let todo of visibleTodos$ | async"
       [todo]="todo"
-      
+      [isEditing]="editingId === todo.id"
     ></app-todos-todo>
     
   </ul>
